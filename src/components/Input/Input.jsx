@@ -70,7 +70,7 @@ const Input = ({
             errorMessage
               ? 'border-red-500 focus:border-red-500  focus:ring-red-500'
               : dirtyFields && !errorMessage
-              ? 'border-blue-500 '
+              ? 'border-green-500 '
               : 'border-gray-300 '
           } `}
           placeholder={placeholder}

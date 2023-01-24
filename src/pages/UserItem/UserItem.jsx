@@ -45,9 +45,9 @@ const UserItem = () => {
     dispatch(
       addItem({
         id: uuidv4(),
-        title: title,
-        price: price,
-        quantity: quantity,
+        title,
+        price,
+        quantity,
       })
     )
     reset()

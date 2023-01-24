@@ -40,12 +40,12 @@ const Table = ({ data }) => {
               <td className='px-6 py-4'>{item.price}</td>
               <td className='px-6 py-4'>{item.quantity}</td>
               <td className='px-6 py-4'>
-                <span className='font-medium pr-4 text-blue-600 dark:text-blue-500 hover:underline'>
+                <span className='font-medium pr-4 cursor-pointer text-mainButtonColor dark:text-blue-500    hover:underline'>
                   Edit
                 </span>
                 <span
                   onClick={() => handleRemoveItem(item.id)}
-                  className='font-medium text-blue-600 dark:text-blue-500 hover:underline'
+                  className='font-medium cursor-pointer text-red-600 dark:text-blue-500 hover:underline '
                 >
                   Delete
                 </span>
