@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-const EmployeeSchema = yup.object().shape({
+const UserSchema = yup.object().shape({
   name: yup
     .string()
     .required('სახელი სავალდებულოა.')
@@ -34,4 +34,4 @@ const EmployeeSchema = yup.object().shape({
     ),
 })
 
-export default EmployeeSchema
+export default UserSchema

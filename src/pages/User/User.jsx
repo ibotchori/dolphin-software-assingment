@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { EmployeeSchema, UserSchema } from 'Schema'
+import { UserSchema } from 'Schema'
 /* Redux */
 import { useSelector, useDispatch } from 'react-redux'
 // actions
