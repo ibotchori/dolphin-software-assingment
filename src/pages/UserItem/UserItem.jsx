@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 import { Input, PageTitle, SubmitButton, Table } from 'components'
-import React from 'react'
-
+import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { EmployeeSchema, ItemsSchema, UserSchema } from 'Schema'
@@ -18,9 +18,13 @@ import {
   setSex,
   setSurname,
 } from 'features/user/userSlice'
+import { addItem } from 'features/items/ItemsSlice'
 
 const UserItem = () => {
   const { name } = useSelector((state) => state.user)
+  const items = useSelector((state) => state.items)
+
+  const dispatch = useDispatch()
 
   /* Use Form */
   const {
@@ -28,6 +32,7 @@ const UserItem = () => {
     handleSubmit,
     watch,
     setValue,
+    reset,
     formState: { errors, dirtyFields },
   } = useForm({
     mode: 'onChange',
@@ -36,7 +41,16 @@ const UserItem = () => {
   })
 
   const onSubmit = (data) => {
-    console.log(data)
+    const { title, price, quantity } = data
+    dispatch(
+      addItem({
+        id: uuidv4(),
+        title: title,
+        price: price,
+        quantity: quantity,
+      })
+    )
+    reset()
   }
   return (
     <div className='bg-gray-100 w-full h-screen sm:py-10 flex flex-col justify-between'>
@@ -80,6 +94,7 @@ const UserItem = () => {
               <SubmitButton text='დამატება' px='px-10' />
             </div>
           </form>
+          <Table data={items} />
         </div>
       </div>
     </div>
