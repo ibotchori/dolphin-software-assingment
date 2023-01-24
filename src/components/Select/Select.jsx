@@ -15,7 +15,7 @@ const Select = ({
       <select
         value={value}
         disabled={disabled}
-        /*   {...register(name)} */
+        {...register(name)}
         id={id}
         name={name}
         className={`${

@@ -30,7 +30,7 @@ const RadioButton = ({
           <input
             name={name}
             value={value1}
-            /* {...register(name)} */
+            {...register(name)}
             defaultChecked={checked1}
             className='rounded-full appearance-none  h-5 w-5 border-2  border-radioButtonColor bg-white checked:bg-radioButtonColor  checked:border-radioButtonColor focus:outline-none transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-5 cursor-pointer mt-[2px]'
             type='radio'
@@ -46,7 +46,7 @@ const RadioButton = ({
           <input
             name={name}
             value={value2}
-            /*   {...register(name)} */
+            {...register(name)}
             defaultChecked={checked2}
             className='rounded-full appearance-none  h-5 w-5 border-2  border-radioButtonColor bg-white checked:bg-radioButtonColor  checked:border-radioButtonColor focus:outline-none transition duration-200  align-top bg-no-repeat bg-center bg-contain float-left mr-5 cursor-pointer mt-[2px]'
             type='radio'
