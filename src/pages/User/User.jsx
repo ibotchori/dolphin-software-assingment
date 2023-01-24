@@ -6,12 +6,12 @@ import {
 } from 'features/counter/counterSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
-const Home = () => {
+const User = () => {
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
   return (
     <>
-      <h1 className='text-3xl font-bold underline text-red-600'>Home Page</h1>
+      <h1 className='text-3xl font-bold underline text-red-600'>User Page</h1>
       <div>
         <div className='flex flex-col justify-center items-center'>
           <button
@@ -40,4 +40,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default User
