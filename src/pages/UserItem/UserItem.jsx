@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 import { Input, PageTitle, SubmitButton, Table } from 'components'
-import React, { useState } from 'react'
+import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { EmployeeSchema, ItemsSchema, UserSchema } from 'Schema'
+import { ItemsSchema } from 'Schema'
 /* Redux */
 import { useSelector, useDispatch } from 'react-redux'
 // actions
@@ -94,7 +94,7 @@ const UserItem = () => {
               <SubmitButton text='დამატება' px='px-10' />
             </div>
           </form>
-          <Table data={items} />
+          {items.length > 0 && <Table data={items} />}
         </div>
       </div>
     </div>
