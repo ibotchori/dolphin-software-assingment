@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Input, PageTitle, RadioButton, Select, SubmitButton } from 'components'
+import { Input, PageTitle, RadioButton, Select, Button } from 'components'
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
@@ -58,7 +58,7 @@ const User = () => {
   }, [watch(), dispatch])
 
   const onSubmit = (data) => {
-    navigate('/user-item')
+    navigate('/item-list')
   }
 
   return (
@@ -154,7 +154,7 @@ const User = () => {
             />
           </div>
           <div className='w-full flex pr-3 lg:pr-0  py-6 sm:py-14 justify-end'>
-            <SubmitButton text='დამატება' px='px-10' />
+            <Button text='დამატება' type='submit' />
           </div>
         </form>
       </div>

@@ -1,4 +1,4 @@
-export { default as SubmitButton } from './Buttons/SubmitButton'
+export { default as Button } from './Buttons/Button'
 export { default as GoBackButton } from './Buttons/GoBackButton'
 export { default as PageTitle } from './PageTitle/PageTitle'
 export { default as Input } from './Input/Input'

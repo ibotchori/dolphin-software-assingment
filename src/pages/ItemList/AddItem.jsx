@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Input, SubmitButton } from 'components'
+import { Input, Button } from 'components'
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { useForm } from 'react-hook-form'
@@ -76,8 +76,9 @@ const AddItem = () => {
               />
             </div>
           </div>
-          <div className='w-full flex   justify-end'>
-            <SubmitButton text='დამატება' px='px-10' />
+          <div className='w-full flex  gap-2 justify-end'>
+            <Button text='დამატება' type={'submit'} />
+            <Button text='უკან' className='px-8' path='/item-list' />
           </div>
         </form>
       </div>
