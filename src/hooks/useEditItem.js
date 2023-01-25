@@ -15,6 +15,14 @@ const useEditItem = () => {
   const existingItem = items.filter((item) => item.id === params.id)
   const { title, price, quantity } = existingItem[0]
 
+  const { name } = useSelector((state) => state.user)
+
+  useEffect(() => {
+    if (!name) {
+      navigate('/')
+    }
+  }, [name, navigate])
+
   /* Use Form */
   const {
     register,

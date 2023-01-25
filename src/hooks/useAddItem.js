@@ -1,22 +1,28 @@
-/* eslint-disable no-unused-vars */
-
 import { v4 as uuidv4 } from 'uuid'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { ItemsSchema } from 'Schema'
 import { addItem } from 'features/items/ItemsSlice'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
 
 const useAddItem = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { name } = useSelector((state) => state.user)
+
+  useEffect(() => {
+    if (!name) {
+      navigate('/')
+    }
+  }, [name, navigate])
+
   /* Use Form */
   const {
     register,
     handleSubmit,
     watch,
-    setValue,
     reset,
     formState: { errors, dirtyFields },
   } = useForm({
