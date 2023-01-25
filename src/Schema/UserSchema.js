@@ -24,14 +24,11 @@ const UserSchema = yup.object().shape({
   email: yup
     .string()
     .required('მეილი სავალდებულოა.')
-    .email('გთხოვთ მიუთითოთ მეილის ფორმატით.'),
+    .email('გთხოვთ, მიუთითოთ მეილის ფორმატით.'),
   phone_number: yup
     .string()
     .required('ტელეფონი სავალდებულოა.')
-    .matches(
-      /^(\+995)(79\d{7}|5\d{8})$/,
-      'უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს'
-    ),
+    .matches(/^(\+995)(79\d{7}|5\d{8})$/, 'გთხოვთ, მიუთითოთ +995 ფორმატით'),
 })
 
 export default UserSchema
