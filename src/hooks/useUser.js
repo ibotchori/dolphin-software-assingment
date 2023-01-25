@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-
-import { Input, PageTitle, RadioButton, Select, Button } from 'components'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -19,7 +16,7 @@ import {
   setSurname,
 } from 'features/user/userSlice'
 
-const useUser = (date) => {
+const useUser = () => {
   const countryList = [
     { id: 1, name: 'საქართველო' },
     { id: 2, name: 'აშშ' },
@@ -40,7 +37,6 @@ const useUser = (date) => {
     register,
     handleSubmit,
     watch,
-    setValue,
     formState: { errors, dirtyFields },
   } = useForm({
     mode: 'onChange',

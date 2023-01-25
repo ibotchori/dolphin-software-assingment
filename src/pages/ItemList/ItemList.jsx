@@ -1,16 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable no-unused-vars */
 import { Button, Table } from 'components'
+import { useItemList } from 'hooks'
 import React from 'react'
 
-/* Redux */
-import { useSelector } from 'react-redux'
-
-import { Link } from 'react-router-dom'
-
 const UserItem = () => {
-  const { name } = useSelector((state) => state.user)
-  const items = useSelector((state) => state.items)
+  const { name, items } = useItemList()
 
   return (
     <div className='bg-gray-100 w-full h-screen  sm:p-20 flex flex-col justify-between'>

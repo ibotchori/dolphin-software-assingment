@@ -1,57 +1,11 @@
-/* eslint-disable no-unused-vars */
 import { Input, Button } from 'components'
-import React, { useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { ItemsSchema } from 'Schema'
-import { editItem } from 'features/items/ItemsSlice'
-import { useNavigate, useParams } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useEditItem } from 'hooks'
 
 const EditItem = () => {
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const params = useParams()
+  const { onSubmit, register, handleSubmit, errors, dirtyFields } =
+    useEditItem()
 
-  const items = useSelector((state) => state.items)
-  const existingItem = items.filter((item) => item.id === params.id)
-  const { title, price, quantity } = existingItem[0]
-
-  /* Use Form */
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-    reset,
-    formState: { errors, dirtyFields },
-  } = useForm({
-    mode: 'onChange',
-    reValidateMode: 'onChange',
-    resolver: yupResolver(ItemsSchema),
-  })
-
-  useEffect(() => {
-    setValue('title', title)
-    setValue('price', price)
-    setValue('quantity', quantity)
-  }, [price, quantity, setValue, title])
-
-  const onSubmit = (data) => {
-    const { title, price, quantity } = data
-    dispatch(
-      editItem({
-        id: params.id,
-        title,
-        price,
-        quantity,
-      })
-    )
-
-    reset()
-    navigate('/item-list')
-  }
   return (
     <div className='bg-gray-100 w-full h-screen p-5 sm:p-20  flex flex-col justify-start items-center'>
       <div className=' flex justify-center'>
