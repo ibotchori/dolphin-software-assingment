@@ -2,6 +2,7 @@
 import { deleteItem } from 'features/items/ItemsSlice'
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Table = ({ data }) => {
   const dispatch = useDispatch()
@@ -59,9 +60,12 @@ const Table = ({ data }) => {
                       {item.quantity}
                     </td>
                     <td className='relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6'>
-                      <span className='text-indigo-600 cursor-pointer hover:text-indigo-900 pr-2'>
+                      <Link
+                        to={`/item-list/edit-item/${item.id}`}
+                        className='text-indigo-600 cursor-pointer hover:text-indigo-900 pr-2'
+                      >
                         Edit
-                      </span>
+                      </Link>
                       <span
                         onClick={() => handleRemoveItem(item.id)}
                         className='text-indigo-600 cursor-pointer hover:text-indigo-900'
