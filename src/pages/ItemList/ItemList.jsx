@@ -19,6 +19,7 @@ import {
   setSurname,
 } from 'features/user/userSlice'
 import { addItem } from 'features/items/ItemsSlice'
+import { Link } from 'react-router-dom'
 
 const UserItem = () => {
   const { name } = useSelector((state) => state.user)
@@ -55,8 +56,8 @@ const UserItem = () => {
   return (
     <div className='bg-gray-100 w-full h-screen  sm:p-20 flex flex-col justify-between'>
       <div className='px-4 sm:px-6 lg:px-8'>
-        <div className='sm:flex sm:items-center'>
-          <div className='sm:flex-auto'>
+        <div className='sm:flex sm:items-center sm:pt-0 pt-2 '>
+          <div className='sm:flex-auto '>
             <h1 className='text-xl font-semibold text-gray-900'>
               გამარჯობა {name}
             </h1>
@@ -65,12 +66,13 @@ const UserItem = () => {
             </p>
           </div>
           <div className='mt-4 sm:mt-0 sm:ml-16 sm:flex-none'>
-            <button
+            <Link
+              to={'/item-list/add-item'}
               type='button'
               className='inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto'
             >
               ნივთის დამატება
-            </button>
+            </Link>
           </div>
         </div>
         <Table data={items} />

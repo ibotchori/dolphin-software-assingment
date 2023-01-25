@@ -1,4 +1,4 @@
-import { User, UserItem } from 'pages'
+import { User, ItemList, AddItem } from 'pages'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
 function App() {
@@ -6,7 +6,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<User />} />
-        <Route path='/user-item' element={<UserItem />} />
+        <Route path='/item-list' element={<ItemList />} />
+        <Route path='/item-list/add-item' element={<AddItem />} />
       </Routes>
     </BrowserRouter>
   )
