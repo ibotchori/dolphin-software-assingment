@@ -58,6 +58,7 @@ const User = () => {
   }, [watch(), dispatch])
 
   const onSubmit = (data) => {
+    alert('მომხმარებელი წარმატებით დაემატა')
     navigate('/item-list')
   }
 
