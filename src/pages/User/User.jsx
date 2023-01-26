@@ -1,4 +1,4 @@
-import { Input, PageTitle, RadioButton, Select, Button } from 'components'
+import { Input, RadioButton, Select, Button } from 'components'
 import React from 'react'
 import { useUser } from 'hooks'
 
@@ -21,7 +21,6 @@ const User = () => {
 
   return (
     <div className='bg-gray-100 w-full min-h-screen sm:py-10 flex flex-col justify-between'>
-      <PageTitle path='/' />
       <div className='flex justify-center h-full'>
         <form
           onSubmit={handleSubmit(onSubmit)}
